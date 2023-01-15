@@ -1,0 +1,729 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    background-color: #f0f8ff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #999;
+}
+
+/*login*/
+.login {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    color: #f0f8ff;
+}
+
+.login .inputs {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login input {
+    width: 350px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    margin: 10px auto;
+    background-color: #f0f8ff;
+    transition: .5s;
+}
+
+.login input:focus {
+    transform: scale(1.2);
+}
+
+.login i {
+    color: #f0f8ff;
+    font-size: 18px;
+    width: 175px;
+    margin: 5px;
+}
+
+.login i:hover {
+    color: red;
+}
+
+.login button:hover {
+    transform: scale(1.2);
+}
+
+.login button {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    margin: 10px auto;
+    position: relative;
+    right: 125px;
+    background-color: #f0f8ff;
+    transition: .5s;
+}
+
+/*app*/
+.app {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.app .side_nav {
+    width: 75px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app .side_nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.app ul i {
+    font-size: 25px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.app ul i:hover {
+    font-size: 35px;
+}
+
+.app .mainapp {
+    width: 92%;
+    height: 100%;
+}
+
+.app .mainapp .home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.app .mainapp .home img {
+    width: 300px;
+    border-radius: 100%;
+}
+
+.app .mainapp .home h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f0f8ff;
+}
+
+.app .mainapp .home p {
+    color: #f0f8ff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.app .mainapp .home .date {
+    display: flex;
+    gap: 20px;
+}
+
+.app .mainapp .home .date div {
+    display: flex;
+    gap: 5px;
+}
+
+.app .mainapp .home .date div p {
+    font-size: 13px;
+    color: #000;
+}
+
+.app .mainapp .home input {
+    background-color: #f0f8ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: .5s;
+}
+
+.app .mainapp .home input:hover {
+    transform: scale(2);
+}
+
+/*storage*/
+.app .mainapp .storage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.app .mainapp .storage .addProdact {
+    text-align: center;
+    color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 300px;
+}
+
+.app .mainapp .storage .addProdact h2 {
+    margin-bottom: 10px;
+}
+
+.app .mainapp .storage .search {
+    display: flex;
+    gap: 20px;
+    width: 300px;
+}
+
+.app .mainapp .inputText {
+    padding: 5px 10px;
+    background-color: #f0f8ff;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    transition: .5s;
+}
+
+.app .mainapp .inputText:focus,
+.app .mainapp .inputButton:hover {
+    transform: scale(1.25);
+    background-color: #c4cdd4;
+}
+
+.app .mainapp .storage .inputButton {
+    padding: 5px 10px;
+    background-color: #f0f8ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.prodactTable {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table td,
+table th {
+    padding: 5px;
+}
+
+/*sell*/
+.sell {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sell h1 {
+    color: #f0f8ff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.sell .searchTypes {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sell .searchTypes input {
+    width: 33%;
+}
+
+.inputButton {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.sell .searchTable input {
+    width: 100px;
+}
+
+.inputButton:hover {
+    transform: scale(1.1);
+    background-color: #c4cdd4;
+}
+
+.sell #cansel:hover,
+#cs:hover {
+    background-color: red;
+    color: #f0f8ff;
+}
+
+.sell #sell:hover,
+.retrieval #doneRetrieval:hover {
+    background-color: green;
+    color: #f0f8ff;
+}
+
+#reset:hover {
+    background-color: rgb(9, 0, 128);
+    color: #f0f8ff;
+}
+
+.sell #retrieval:hover {
+    background-color: #000;
+    color: #f0f8ff;
+}
+
+.sell input[type=text],
+.sell input[type=number] {
+    background-color: #f0f8ff;
+    border: none;
+    outline: none;
+    width: 350px;
+    height: 40px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.sell input[type=text]:focus,
+.sell input[type=number]:focus {
+    transform: scale(1.1);
+    background-color: #c4cdd4;
+}
+
+.sell .searchTable {
+    width: 100%;
+    height: 323px;
+    overflow-y: scroll;
+    margin: auto;
+}
+
+.sell .searchTable table {
+    width: 100%;
+    height: auto;
+}
+
+/*bill*/
+.bill,
+.retrieval {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.bill .head h2,
+.retrieval .head h2 {
+    font-size: 30px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.bill .head i,
+.retrieval .head i {
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    left: 100px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.bill .date {
+    width: 350px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bill .date div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bill .billTable,
+.retrieval .retrievalTable {
+    width: 100%;
+    height: 320px;
+    overflow-y: scroll;
+}
+
+.bill .billTable table,
+.retrieval .retrievalTable table {
+    width: 100%;
+}
+
+.rDone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.rFail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.rFail h1 {
+    color: #000;
+    width: 75%;
+    font-size: 30px;
+}
+
+.rFail .h {
+    font-size: 20px;
+    color: red;
+    max-width: 300px;
+    text-align: center;
+}
+
+.rFail .date {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 200px;
+}
+
+.rFail .date div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.rFail input {
+    width: 200px;
+    background-color: #b5fcb5;
+}
+
+.rFail #endRFail:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.history {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.history .historyInputs {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.history .historyInputs input {
+    cursor: pointer;
+    outline: none;
+}
+
+.history .historyInputs div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history .buttons {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.history .buttons input {
+    width: 100px;
+}
+
+.history .historyTable {
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.history .historyTable tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.history .historyTable table tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*workers*/
+.workers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.workers .workerTable {
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.workers .workerInfo,
+.workers .workerInfo .workerInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.workers .workerInfo .workerInputs div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.workers .workerInfo .workerInputs div .inputButton {
+    width: 50px;
+    text-align: center;
+}
+
+.workers .detailsOfWorker {
+    width: 700px;
+    height: 100%;
+    position: absolute;
+    background-color: #c4cdd4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.workers .detailsOfWorker .details {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.workers .detailsOfWorker .details div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#close:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.workers .giveWeekEnd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.workers .giveWeekEnd div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    height: 50px;
+}
+
+.detailsOfWorker .details p span {
+    color: red;
+}
+
+.giveWeekEnd #cfkts,
+.giveWeekEnd div label {
+    cursor: pointer;
+}
+
+/*setting*/
+.setting {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-y: scroll;
+}
+
+.setting h1 {
+    text-align: left;
+    font-size: 40px;
+}
+
+.setting .settingBars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 45%;
+}
+
+.setting .bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting .settingBars .contentBar {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #c4cdd4;
+    padding: 15px 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.setting .settingBars .contentBar:hover,
+.setting .settingBars .chPbfb:hover {
+    border: 1px solid #000;
+}
+
+.setting .settingBars .contentBar i {
+    transition: .5s;
+    transform: rotate(0deg);
+}
+
+.setting .settingBars .chPbfb {
+    width: 300px;
+    display: none;
+    position: relative;
+    background-color: #c4cdd4;
+    padding: 10px 5px;
+    border-radius: 20px;
+    transition: .5s;
+    cursor: pointer;
+    margin: 10px 15px;
+}
+
+.setting .editSetting {
+    width: 53%;
+}
+.setting .editSetting .cpwipas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.setting .editSetting .cpwipas .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.setting .editSetting .cpwipas .inputs div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.setting .editSetting .cpwipas .inputs label{
+    font-size: 30px;
+}
+.setting .editSetting .cpwipas .inputs input {
+    width: 350px;
+    height: 50px;
+}
+.setting .editSetting .cpwipas .button{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.setting .editSetting .cpwipas .button input{
+    width: 150px;
+}
+#cpwipas3 img{
+    width: 300px;
+    height: 300px;
+    margin: 10px 0 0 0;
+    border-radius: 100%;
+}
+.cpwipas .editImage label{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: .5s;
+}
+.cpwipas .editImage label:hover{
+    background-color: #f0f8ff;
+    transform: scale(1.3);
+}

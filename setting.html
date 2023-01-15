@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crad</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="icon" href="img/logo of store.png">
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="app">
+          <nav class="side_nav">
+            <ul>
+                <li><a href="mainPage.html" style="all: unset;"><i id="navHome" class="fi fi-rs-home"></i></a></li>
+                <li><a href="storage.html" style="all: unset;"><i id="navStorage" class="fi fi-rs-folder"></i></a></li>
+                <li><a href="sell.html" style="all: unset;"><i id="navSell" class="fi fi-rr-dollar"></i></a></li>
+                <li><a href="history.html" style="all: unset;"><i id="navHistory" class="fi fi-rr-time-past"></i></a></li>
+                <li><a href="workers.html" style="all: unset;"><i id="navWorkers" class="fi fi-rr-users-alt"></i></a></li>
+                <li><a href="setting.html" style="all: unset;"><i id="navSetting" class="fi fi-rr-settings-sliders"></i></a></li>
+            </ul>
+        </nav>
+            <div class="mainapp">
+                <div class="setting" >
+                    <div class="settingBars">
+                        <h1>setting</h1>
+                        <div class="bar">
+                            <div class="contentBar" id="chbw" onclick="settingBar(this.id)">
+                                <h4>change passwords</h4>
+                                <i class="fi fi-rr-caret-right"></i>
+                            </div>
+                            <div class="chPbfb" id="chbw1" onclick="apchpad()">
+                                <h5>manager</h5>
+                            </div>
+                            <div class="chPbfb" id="chbw2" onclick="apchpad()">
+                                <h5>branch 1</h5>
+                            </div>
+                            <div class="chPbfb" id="chbw3" onclick="apchpad()">
+                                <h5>branch 2</h5>
+                            </div>
+                            <div class="chPbfb" id="chbw4" onclick="apchpad()">
+                                <h5>branch 3</h5>
+                            </div>
+                        </div>
+
+                        <div class="bar">
+                            <div class="contentBar" id="adac" onclick="settingBar(this.id)">
+                                <h4>add account</h4>
+                                <i class="fi fi-rr-caret-right"></i>
+                            </div>
+                            <div class="chPbfb" id="adac1" onclick="adacgg()">
+                                <h5>add account</h5>
+                            </div>
+                        </div>
+
+                        <div class="bar">
+                            <div class="contentBar" id="esnsi" onclick="settingBar(this.id)">
+                                <h4>Edit</h4>
+                                <i class="fi fi-rr-caret-right"></i>
+                            </div>
+                            <div class="chPbfb" id="esnsi1" onclick="esp()">
+                                <h5>edit store profile</h5>
+                            </div>
+                        </div>
+
+                        <div class="bar">
+                            <div class="contentBar" id="sab" onclick="settingBar(this.id)">
+                                <h4>select account</h4>
+                                <i class="fi fi-rr-caret-right"></i>
+                            </div>
+                            <div class="chPbfb" id="sab1">
+                                <h5>branch1</h5>
+                            </div>
+                            <div class="chPbfb" id="sab2">
+                                <h5>branch2</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="editSetting">
+                        <div class="cpwipas" id="cpwipas1" style="display: none;">
+                            <h1>Change manager password</h1>
+                            <div class="inputs">
+                                <input type="password" class="inputText" placeholder="old password">
+                                <input type="password" class="inputText" placeholder="new password">
+                            </div>
+                            <div class="button">
+                                <input type="button" value="change password" class="inputButton">
+                                <input type="button" value="cansel" class="inputButton" onclick="cansels()">
+                            </div>
+                        </div>
+
+                        <div class="cpwipas" id="cpwipas2" style="display: none;">
+                            <h1>add account</h1>
+                            <div class="inputs">
+                                <input type="text" id="aacun" class="inputText" placeholder="user name">
+                                <input type="password" id="aacpa" class="inputText" placeholder="password">
+                                <input type="text" id="aacad" class="inputText" placeholder="Address">
+                                <input type="number" id="aacph" class="inputText" placeholder="phone">
+                                <input type="text" id="aacem" class="inputText" placeholder="email">
+                                <div>
+                                    <label id="labelBs" for="bs">branch</label>
+                                    <input type="range" id="" id="bs" max="2" min="1" style=" width:50px;">
+                                </div>
+
+                            </div>
+                            <div class="button">
+                                <input type="button" value="add branche" class="inputButton" onclick="creatacc()">
+                                <input type="button" value="cansel" class="inputButton" onclick="cansels()">
+                            </div>
+                        </div>
+                        <div class="cpwipas" id="cpwipas3" style="display: none;">
+                            <img src="img/logo of store.png" alt="">
+                            <div class="editImage">
+                                <label for="image_input">
+                                    <p>edit store logo</p>
+                                    <i class="fi fi-rr-inbox-out"></i>
+                                </label>
+                                <input type="file" id="image_input" style="display: none;" accept="image/*">
+                            </div>
+                            <div class="editNameOfStore">
+                                <input type="text" class="inputText" placeholder="name of store">
+                            </div>
+                            <div class="esinButtons">
+                                <input type="button" class="inputButton" value="applay">
+                                <input type="button" class="inputButton" value="cansel" onclick="cansels()">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>

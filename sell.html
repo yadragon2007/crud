@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crad</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="icon" href="img/logo of store.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login" style="display: none;">
+            <h1>login</h1>
+            <div class="inputs">
+                <input type="text" class="email" name="email" placeholder="User Name">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <i>Show password..</i>
+                <i>Forgot password..?</i>
+                <button>Login</button>
+            </div>
+        </div>
+        <div class="app">
+          <nav class="side_nav">
+            <ul>
+                <li><a href="mainPage.html" style="all: unset;"><i id="navHome" class="fi fi-rs-home"></i></a></li>
+                <li><a href="storage.html" style="all: unset;"><i id="navStorage" class="fi fi-rs-folder"></i></a></li>
+                <li><a href="sell.html" style="all: unset;"><i id="navSell" class="fi fi-rr-dollar"></i></a></li>
+                <li><a href="history.html" style="all: unset;"><i id="navHistory" class="fi fi-rr-time-past"></i></a></li>
+                <li><a href="workers.html" style="all: unset;"><i id="navWorkers" class="fi fi-rr-users-alt"></i></a></li>
+                <li><a href="setting.html" style="all: unset;"><i id="navSetting" class="fi fi-rr-settings-sliders"></i></a></li>
+            </ul>
+        </nav>
+            <div class="mainapp">
+               
+                <div class="sell">
+                    <h1>Sell</h1>
+                    <div class="searchTypes">
+                        <input type="button" value="search by name" class="inputButton">
+                        <input type="button" value="search by type" class="inputButton">
+                        <input type="button" value="search by bar code" class="inputButton">
+                    </div>
+                    <input type="text" placeholder="search" id="sip">
+                    <input type="number" placeholder="count" id="cip">
+                    <div class="sellCansel">
+                        <input type="button" value="sell" id="sell" class="inputButton">
+                        <input type="button" value="reset" id="reset" class="inputButton">
+                        <input type="button" value="retrieval" id="retrieval" class="inputButton">
+                        <input type="button" value="cansel" id="cs" class="inputButton">
+                    </div>
+                    <div class="searchTable">
+                        <table>
+                            <table id="ourBranch">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>price</th>
+                                    <th>count</th>
+                                    <th>bar code</th>
+                                    <th>add to cart</th>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>redme note 9s</td>
+                                        <td>phone</td>
+                                        <td>4000</td>
+                                        <td>99</td>
+                                        <td>54564565464</td>
+                                        <td><input type="button" value="add to cart" class="inputButton"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="bill" style="display: none;">
+                        <div class="head">
+                            <h2>Name of store</h2>
+                        </div>
+                        <p>904358</p>
+                        <div class="date">
+                            <div class="month">
+                                <h5>Month:</h5>
+                                <p id="month"></p>
+                            </div>
+                            <div class="day">
+                                <h5>Day:</h5>
+                                <p id="day"></p>
+                            </div>
+                            <div class="hour">
+                                <h5>hour:</h5>
+                                <p id="hour"></p>
+                            </div>
+                            <div class="minutes">
+                                <h5>minutes:</h5>
+                                <p id="minutes"></p>
+                            </div>
+                        </div>
+                        <div class="billTable">
+                            <table>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>price</th>
+                                    <th>count</th>
+                                    <th>bar code</th>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>redme note 9s</td>
+                                        <td>4000</td>
+                                        <td>99</td>
+                                        <td>54564565464</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <span>total price: 50$</span>
+                        <div class="billButtons">
+                            <input type="button" value="sell" id="sell" class="inputButton">
+                            <input type="button" value="cansel" id="cansel" class="inputButton">
+                        </div>
+                    </div>
+                    <div class="retrieval" style="display: none;">
+                        <div class="head">
+                            <h2>retrieval</h2>
+                        </div>
+                        <div class="retrievalInput">
+                            <input type="number" placeholder="Bill number">
+                            <input type="button" value="find bill" class="inputButton">
+                        </div>
+                        <div class="rDone" style="display: none;">
+
+                            <div class="retrievalTable">
+                                <table>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>price</th>
+                                        <th>count</th>
+                                        <th>bar code</th>
+                                        <th>retrieval</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>redme note 9s</td>
+                                            <td>4000</td>
+                                            <td>99</td>
+                                            <td>54564565464</td>
+                                            <td><input type="button" value="retrieval" class="inputButton"></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="rangeContainer">
+                                <input type="range" id="p" value="0">
+                                <span id="m"></span>
+                                <input type="button" value="applay" class="inputButton">
+                            </div>
+                            <div class="billButtons">
+                                <input type="button" value="retrieval " id="doneRetrieval" class="inputButton">
+                                <input type="button" value="cansel" id="rDoneCansel" class="inputButton">
+                            </div>
+                        </div>
+                        <div class="rFail" style="display: none;">
+                            <h1>
+                                You can not retrieval this bill
+                            </h1>
+                            <div class="pDate">
+                                <p class="h">
+                                    Because the redemption time has run. <br>
+                                    the last time to retrieval is:
+                                </p>
+                                <div class="date">
+                                    <div class="month">
+                                        <h5>Month:</h5>
+                                        <p id="month">v</p>
+                                    </div>
+                                    <div class="day">
+                                        <h5>Day:</h5>
+                                        <p id="day">v</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="button" value="ok " id="endRFail" class="inputButton">
+                        </div>
+                    </div>
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>

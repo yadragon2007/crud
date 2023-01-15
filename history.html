@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crad</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="icon" href="img/logo of store.png">
+</head>
+
+<body>
+    <div class="container">
+      
+        <div class="app">
+          <nav class="side_nav">
+            <ul>
+                <li><a href="mainPage.html" style="all: unset;"><i id="navHome" class="fi fi-rs-home"></i></a></li>
+                <li><a href="storage.html" style="all: unset;"><i id="navStorage" class="fi fi-rs-folder"></i></a></li>
+                <li><a href="sell.html" style="all: unset;"><i id="navSell" class="fi fi-rr-dollar"></i></a></li>
+                <li><a href="history.html" style="all: unset;"><i id="navHistory" class="fi fi-rr-time-past"></i></a></li>
+                <li><a href="workers.html" style="all: unset;"><i id="navWorkers" class="fi fi-rr-users-alt"></i></a></li>
+                <li><a href="setting.html" style="all: unset;"><i id="navSetting" class="fi fi-rr-settings-sliders"></i></a></li>
+            </ul>
+        </nav>
+            <div class="mainapp">
+
+
+                <div class="history">
+                    <h1>History</h1>
+                    <div class="historyInputs">
+                        <div>
+                            <label for="ryear">Year</label>
+                            <input type="range" id="ryear" value="2022" max="2020" min="2000">
+                            <span id="upy"></span>
+                        </div>
+                        <div>
+                            <label for="rmonth">Month</label>
+                            <input type="range" id="rmonth" value="1" max="12" min="1">
+                            <span id="upm"></span>
+                        </div>
+                        <div>
+                            <label for="rday">Day</label>
+                            <input type="range" id="rday" value="1" max="31" min="1">
+                            <span id="upd"></span>
+                        </div>
+                        <div>
+                            <label for="rhour">hour</label>
+                            <input type="range" id="rhour" value="1" max="12" min="1">
+                            <span id="uph"></span>
+                        </div>
+                        <div>
+                            <label for="rminutes">minutes</label>
+                            <input type="range" id="rminutes" value="1" max="60" min="1">
+                            <span id="upmi"></span>
+                        </div>
+                        <div>
+                            <label for="rampm">Am/Pm</label>
+                            <input type="range" id="rampm" value="1" max="2" min="1">
+                            <span id="uppmam"></span>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="search" class="inputButton">
+                        <input type="button" value="reset" id="rehi" class="inputButton">
+                    </div>
+
+                    <div class="historyTable">
+                        <table>
+                            <tr>
+                                <th>id</th>
+                                <th>prodacts</th>
+                                <th>storage/sell/retrieval</th>
+                                <th>date</th>
+                                <th>time</th>
+                                <th>total price</th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>redme ,iphone11 ,dfs</td>
+                                    <td>storage</td>
+                                    <td><span>2019/8/14</span></td>
+                                    <td>10:40pm</td>
+                                    <td>99</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>

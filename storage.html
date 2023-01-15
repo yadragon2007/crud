@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crad</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link href="uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="icon" href="img/logo of store.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login" style="display: none;">
+            <h1>login</h1>
+            <div class="inputs">
+                <input type="text" class="email" name="email" placeholder="User Name">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <i>Show password..</i>
+                <i>Forgot password..?</i>
+                <button>Login</button>
+            </div>
+        </div>
+        <div class="app">
+          <nav class="side_nav">
+            <ul>
+                <li><a href="mainPage.html" style="all: unset;"><i id="navHome" class="fi fi-rs-home"></i></a></li>
+                <li><a href="storage.html" style="all: unset;"><i id="navStorage" class="fi fi-rs-folder"></i></a></li>
+                <li><a href="sell.html" style="all: unset;"><i id="navSell" class="fi fi-rr-dollar"></i></a></li>
+                <li><a href="history.html" style="all: unset;"><i id="navHistory" class="fi fi-rr-time-past"></i></a></li>
+                <li><a href="workers.html" style="all: unset;"><i id="navWorkers" class="fi fi-rr-users-alt"></i></a></li>
+                <li><a href="setting.html" style="all: unset;"><i id="navSetting" class="fi fi-rr-settings-sliders"></i></a></li>
+            </ul>
+        </nav>
+            <div class="mainapp">
+                <div class="storage">
+                    <div class="addProdact">
+                        <h2>storage</h2>
+                        <input type="text" placeholder="Name" class="inputText">
+                        <input type="text" placeholder="Type" class="inputText">
+                        <input type="number" placeholder="price" class="inputText">
+                        <input type="number" placeholder="count" class="inputText">
+                        <input type="number" placeholder="bar code" class="inputText">
+                        <input type="button" value="Add prodact" class="inputButton">
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="search" class="inputText">
+                        <input type="button" value="search" class="inputButton">
+                    </div>
+                    <input type="button" value="search in all branches" class="inputButton">
+                    <div class="prodactTable">
+                        <table id="ourBranch">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>price</th>
+                                <th>count</th>
+                                <th>bar code</th>
+                                <th>update</th>
+                                <th>delete</th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>redme note 9s</td>
+                                    <td>phone</td>
+                                    <td>4000</td>
+                                    <td>99</td>
+                                    <td>54564565464</td>
+                                    <td><input type="button" value="update" id="update" class="inputButton"></td>
+                                    <td><input type="button" value="delete" id="delete" class="inputButton"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>

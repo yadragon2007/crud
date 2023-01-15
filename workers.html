@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>crad</title>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link href="uicons-regular-straight/css/uicons-regular-straight.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="icon" href="img/logo of store.png">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="app">
+      <nav class="side_nav">
+        <ul>
+          <li><a href="mainPage.html" style="all: unset;"><i id="navHome" class="fi fi-rs-home"></i></a></li>
+          <li><a href="storage.html" style="all: unset;"><i id="navStorage" class="fi fi-rs-folder"></i></a></li>
+          <li><a href="sell.html" style="all: unset;"><i id="navSell" class="fi fi-rr-dollar"></i></a></li>
+          <li><a href="history.html" style="all: unset;"><i id="navHistory" class="fi fi-rr-time-past"></i></a></li>
+          <li><a href="workers.html" style="all: unset;"><i id="navWorkers" class="fi fi-rr-users-alt"></i></a></li>
+          <li><a href="setting.html" style="all: unset;"><i id="navSetting" class="fi fi-rr-settings-sliders"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mainapp">
+
+        <div class="workers">
+          <h1>workers</h1>
+          <div class="workerInfo">
+            <div class="workerInputs">
+              <div>
+                <input type="text" id="" class="inputText" placeholder="name">
+                <input type="email" id="" class="inputText" placeholder="email address">
+                <input type="text" id="" class="inputText" placeholder="home address">
+              </div>
+              <div>
+                <input type="number" id="" class="inputText" placeholder="phone number">
+                <input type="number" id="" class="inputText" placeholder="salary">
+                <input type="number" id="" class="inputText" placeholder="The salary is worth every...">
+              </div>
+              <h2>
+                week end days
+              </h2>
+              <div>
+                <input type="button" value="sun" onclick="weekEnd(this.id)" id="sudwe" class="inputButton">
+                <input type="button" value="mon" onclick="weekEnd(this.id)" id="mdwe" class="inputButton">
+                <input type="button" value="tue" onclick="weekEnd(this.id)" id="tudwe" class="inputButton">
+                <input type="button" value="wed" onclick="weekEnd(this.id)" id="wdwe" class="inputButton">
+                <input type="button" value="thu" onclick="weekEnd(this.id)" id="thdwe" class="inputButton">
+                <input type="button" value="fri" onclick="weekEnd(this.id)" id="fdwe" class="inputButton">
+                <input type="button" value="sat" onclick="weekEnd(this.id)" id="sawe" class="inputButton">
+              </div>
+            </div>
+            <input type="button" value="add worker" id="addw" class="inputButton">
+          </div>
+          <div class="workerTable">
+            <table>
+              <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>phone number</td>
+                <td>salary</td>
+                <td>details</td>
+                <td>update</td>
+                <td>presence & absence</td>
+                <td>week end</td>
+                <td>termination</td>
+
+              </tr>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>yousef</td>
+                  <td>01005403563</td>
+                  <td>2000</td>
+                  <td><input type="button" id="dwtb" value="details" class="inputButton"></td>
+                  <td><input type="button" value="update" class="inputButton"></td>
+                  <td>
+                    <input type="button" value="presence" class="inputButton">
+                    <input type="button" value="absence" class="inputButton">
+                  </td>
+                  <td><input type="button" value="week end" class="inputButton"></td>
+                  <td><input type="button" value="termination" class="inputButton"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="detailsOfWorker" style="display: none;">
+            <h1>details</h1>
+            <div class="details">
+              <div>
+                <p>Name : <span>Yousef Amr</span></p>
+                <p>Age : <span>16</span></p>
+                <p>email : <span>yousef@gmail.com</span></p>
+                <p>Address : <span>55 Hdak al Ahram</span></p>
+                <p>Number of days to attend : <span>6</span></p>
+              </div>
+              <div>
+                <p>salary : <span>2000</span></p>
+                <p>The salary is due every : <span>month</span></p>
+                <p>number of absence's Day : <span>4 days</span></p>
+                <p>reserved salary : <span>800</span></p>
+                <p>number of absence's Day : <span>8</span></p>
+              </div>
+            </div>
+            <input type="button" value="salary collection" id="" class="inputButton">
+            <div class="giveWeekEnd">
+              <label for="gwe">give week end</label>
+              <input type="number" id="gwe" placeholder="number of days" class="inputText">
+              <div>
+                <label for="cfkts">deducted from salary</label>
+                <input type="checkbox" id="cfkts">
+              </div>
+
+              <input type="button" value="give week end" id="" class="inputButton">
+            </div>
+
+            <input type="button" value="close" id="cwd" class="inputButton">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="/js/script.js"></script>
+
+
+</body>
+
+</html>
