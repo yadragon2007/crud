@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head.ejs') %> 
+
+
+</head>
+
+<body class="bg-dark text-light text-capitalize">
+    <div class="loginP w-100">
+
+
+      <% if (ban==1) { %>
+        <div class="alert alert-warning rounded-0 d-flex align-items-center" role="alert">
+          <h4>you are baned</h4>
+        </div>
+        <% } %>
+      <%- include('./partials/nav.ejs') %> 
+
+
+
+
+        <div class="mt-5 mb-5 row justify-content-around ">
+            <div class="col-lg-4 col-11 mb-5 mb-lg-0">
+                <h1 style="font-size: 35px;">login</h1>
+                <form action="/" method="post" class="">
+                    <div class="form-group">
+                        <label for="userName" class="text-secondary ">email</label>
+                        <input type="text" class="form-control <%= FUserN %> " name="userName" id="userName" required>
+                        <div class="invalid-feedback">
+                            user name is false
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="text-secondary">password</label>
+                        <input type="password" class="form-control <%= FPassword %> " name="password" id="password"
+                            required>
+                        <div class="invalid-feedback">
+                            password is false.
+                        </div>
+                    </div>
+
+
+
+                    <a href="" class="btn btn-link p-0">forget password..?</a>
+                    <br>
+
+                    <input type="submit" class="btn btn-primary mt-3" value="login">
+
+                </form>
+            </div>
+            
+            <div class="col-lg-4 col-11">
+                <h1 style="font-size: 35px;">create account</h1>
+                <form action="/createaccount/create/" method="post">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="firstName" class="text-secondary">first Name</label>
+                                <input type="text" class="form-control w-100" name="firstName" id="firstName" required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="lastName" class="text-secondary">last Name</label>
+                                <input type="text" class="form-control w-100" name="lastName" id="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="userName" class="text-secondary">user name</label>
+                                <input type="text" class="form-control <%= alreadyUserName %>" name="userName" id="userName" required>
+                                <div class="invalid-feedback">this user name is already used</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                              <label for="e-mail" class="text-secondary">e-mail</label>
+                              <input type="email" class="form-control" name="email" id="e-mail">
+                              <div class="invalid-feedback">this e-mail is already used</div>
+                          </div>
+                      </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="password" class="text-secondary">password</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-7 mt-1 mb-3">
+                            <select class="custom-select <%= SAcademicY %>" name="academicYear" aria-label="Default select example">
+                                <option selected value="0">Select your academic year</option>
+                                <option name="fs" value="first secondary">first secondary</option>
+                                <option name="ss" value="Second secondary">Second secondary</option>
+                                <option name="ts" value="Third secondary">Third secondary</option>
+                            </select>
+                            <div class="invalid-feedback">chose academic year</div>
+                        </div>
+
+                        <div class="col-12">
+                            <input type="submit" class="btn btn-primary" value="create account">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <%- include('./partials/footer.ejs') %> 
+        
+    </div>
+
+
+
+  <%- include('./partials/js.ejs') %> 
+    
+</body>
+
+</html>

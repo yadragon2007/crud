@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+  </head>
+
+  <body class="bg-dark text-light text-capitalize">
+    <div class="profile">
+      <% if (alert==1) { %>
+
+
+        <form action="/profile/" class="d-flex justify-content-center align-items-center bg-dark rounded"
+          style="width: 100%; height: 100%;" method="post">
+          <input type="hidden" name="id" value="<%= userData %>">
+          <div class="h-100 d-flex justify-content-center align-items-center">
+            <input type="submit" class="btn btn-warning pl-3 pr-3" value="done">
+          </div>
+        </form>
+
+        <% } else { %>
+          <%- include('./partials/nav.ejs') %>
+
+
+
+            <div class="mb-5 mt-5">
+              <div class="row justify-content-md-around justify-content-center  mb-4 mt-4 align-items-center">
+                <div class="col-7 col-lg-4 col-xl-3">
+                  <img src="/img/500x500.png" class="rounded-circle w-100" alt="">
+                </div>
+                <div class="col-12 col-md-5 m-5">
+
+
+                  <div class="row justify-content-center justify-content-md-start">
+                    <h1>
+                      <%= userData.firstName %>
+                        <%= userData.lastName %>
+                    </h1>
+                  </div>
+                  <div class="row justify-content-center justify-content-lg-start">
+                    <span class="badge text-light bg-primary" style="max-width: 125px;">
+                      <%= userData.academicYear %>
+                    </span>
+
+
+                  </div>
+
+                  <div class="row mt-3 justify-content-center justify-content-lg-start ">
+                    <!-- <div class="btn-group"> -->
+                    <!-- <div class="btn btn-primary" style="width: auto;"></div> -->
+
+                    <div class="btn btn-primary dropdown-toggle" id="info" data-toggle="dropdown">options</div>
+
+
+                    <!-- </div> -->
+                    <ul class="dropdown-menu" style="width: 200px;">
+                      <a href="/" class="dropdown-item">
+                        home
+                      </a>
+                      <!-- <a href="/learnning/" class="dropdown-item">
+                        learn
+                      </a>
+                      <a href="" class="dropdown-item">
+                        quiz
+                      </a> -->
+
+                      <hr class="dropdown-divider">
+
+                      <a href="" class="dropdown-item disabled">
+                        eidt profile
+                      </a>
+                      <a href="" class="dropdown-item disabled">
+                        setting
+                      </a>
+                      <a href="/logout" class="dropdown-item">
+                        log out
+                      </a>
+                    </ul>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+
+              <div class="container mt-5 mb-5">
+                <div class="row ppp justify-content-center">
+
+                  <div class=" w-75 mt-5 mb-5">
+                    <div class="card card-body bg-dark">
+
+                      <h2>Student evaluation:</h2>
+                      <% let g=0; %>
+                        <% let mg=0; %>
+                          <% for( let i=0; i < quizGrades.length; i++ ) { %>
+                            <% g=g+ quizGrades[i].grade %>
+                              <% mg=mg+ quizGrades[i].maxGrade %>
+
+                                <% if (quizGrades.length==i+1) { %>
+                                  <% let d=(g/mg)*100 %>
+
+                                    <div class="progress w-75">
+                                      <div class="progress-bar" role="progressbar" style="width: <%= d %>%;"
+                                        aria-valuenow="25">
+                                        <%= d %>
+                                      </div>
+                                    </div>
+                                    <% } %>
+                                      <% } %>
+
+                                        <br>
+                                        <h2>exam grades:</h2>
+                                        <% for (let i=0; i < quizGrades.length; i++) {%>
+                                          <p style="text-align:start  ;">
+                                            <%= quizGrades[i].title %> : <%= quizGrades[i].grade%>/<%=
+                                                  quizGrades[i].maxGrade %>
+                                          </p>
+                                          <% } %>
+                                            <br>
+
+                                            <h2 class="">smg:</h2>
+                                            <div class="d-flex flex-column-reverse">
+                                              <% for( let i=0; i < QuSchemaData.length; i++ ) { %>
+                                                <% if (QuSchemaData[i].AccData.userName==userData.userName) { %>
+                                                  <% if (QuSchemaData[i].answered=='1' ) { %>
+                                                    <div class="card card-body bg-dark mb-4">
+                                                      <p>the answer of this question: <i class="text-secondary">
+                                                          <%= QuSchemaData[i].question %>
+                                                        </i></p>
+                                                      <p>
+                                                        <%= QuSchemaData[i].reply %>
+                                                      </p>
+                                                      <form action="/delete/question/<%= QuSchemaData[i].id %>/"
+                                                        method="get">
+                                                        <input type="submit" class="btn btn-danger mt-3" value="delete">
+                                                      </form>
+                                                    </div>
+
+                                                    <% } %>
+
+                                                      <% } %>
+                                                        <% } %>
+                                            </div>
+
+
+
+                                            <a href="/learnning/" class="btn btn-primary mt-5">continue learning</a>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+            <%- include('./partials/footer.ejs') %>
+              <% } %>
+    </div>
+
+    <%- include('./partials/js.ejs') %>
+
+  </body>
+
+</html>

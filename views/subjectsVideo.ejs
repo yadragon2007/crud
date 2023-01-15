@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head.ejs') %> 
+
+
+</head>
+
+<body class="bg-dark text-light text-capitalize">
+
+  <div class="subjectVP">
+    <%- include('./partials/nav.ejs') %> 
+
+
+    <%- include('./partials/carousel.ejs') %> 
+
+
+
+
+
+
+
+    <div class="container mt-5 mb-5">
+      <h1 class="text-center text-uppercase">subject 's videos</h1>
+      <div class="row d-flex justify-content-center">
+        <div class="m-4">
+          <% for( let i = 0; i < lessons.length; i++ ) { %>
+            <% if (lessons[i].academicYear == userData.academicYear || userData.admin == '1') { %>
+
+              <div class="card mb-3 bg-dark cardVideo" style="max-width: 600px;">
+                <div class="row g-0">
+                  <div class="col-12">
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><%= lessons[i].title %></h5>
+                      <p class="card-text text-center"><%= lessons[i].description %></p>
+    
+                      <div class="d-flex justify-content-center justify-content-md-start">
+                        <a href="<%= lessons[i].videoLink %>" class="btn btn-primary m-1" style="width: 100px;" target="_blank">watch</a>
+                        <% if (lessons[i].filesLink != '') { %>
+                          <a href="<%= lessons[i].filesLink %>" class="btn btn-link m-1" target="_blank">download files</a>         
+                        <% } %>
+                        <% if (userData.admin == '1') { %>
+                          <a href="/delete/lesson/<%= lessons[i].id %>/" class="btn btn-danger m-1 ">delete lesson</a>         
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            <% } %>
+
+          <% } %>
+
+          
+          
+
+
+
+
+
+
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <%- include('./partials/footer.ejs') %> 
+
+  </div>
+
+
+
+  <%- include('./partials/js.ejs') %> 
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head.ejs') %> 
+
+</head>
+
+<body class="bg-dark text-light text-capitalize">
+  
+  <%- include('./partials/nav.ejs') %> 
+
+
+
+  <div class="">
+    <div class="row justify-content-center">
+      <h3><%= data.grade %>/<%= data.maxGrade %></h3>
+    </div>
+    
+    <div class="row justify-content-center mt-2">
+      <a href="/" class="btn btn-primary">back to home page</a>
+    </div>
+  </div>
+
+
+
+
+
+
+  <%- include('./partials/js.ejs') %> 
+</body>
+
+</html>

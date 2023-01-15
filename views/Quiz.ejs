@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+  </head>
+
+  <body class="bg-dark text-light text-capitalize">
+    <%- include('./partials/nav.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="carousel slide  w-100" id="back" data-bs-interval="false" data-interval="false" data-ride="carousel"
+        data-pause="hover">
+        <form action="/quiz/end/" method="post" class="m-auto container">
+          
+          <input type="hidden" name="id" value="<%= QuizData.id %>">
+
+          <div class="carousel-inner w-100">
+            <% for( let i=0; i < questions.length; i++ ) { %>
+              <% var p='' %>
+                <% if (i==0) { %>
+                  <% p='active' %>
+                    <% } %>
+                      <div class="carousel-item <%= p %>  w-100">
+                        <div class="card bg-dark">
+                          <div class="row mt-2">
+                            <div class="col-12 m-2">
+
+                              <% for( let o=0; o < questions[i].length; o++ ) { %>
+                                <% var question=questions[i] %>
+                                  <% if (question[o][0]=='question' ) { %>
+                                    <p>
+                                      <%= i+1 %>) <%= question[o][1] %>
+                                    </p>
+                                    <% } %>
+                                      <% } %>
+                            </div>
+                          </div>
+
+                          <div class="row justify-content-between">
+                            <% var index=0 %>
+                              <% for( let o=0; o < questions[i].length; o++ ) { %>
+                                <% var question=questions[i] %>
+                                  <% if (question[o][0]=='answer' ||question[o][0]=='false1' ||question[o][0]=='false2'
+                                    ||question[o][0]=='false3' ) { %>
+                                    <div class="col-lg-5 col-12">
+                                      <div class="input-group mb-3">
+                                        <% var num=['A','B','C','D'] %>
+                                          <span class="input-group-text bg-dark border-0 text-light" id="basic-addon1">
+                                            <%= num[index] %>:
+                                          </span>
+                                          <% var index=index+1%>
+                                            <div type="text"
+                                              class="form-control bg-dark border-0 text-light form-check">
+                                              <label for="<%=  %>" class="form-check-label">
+                                                <%= question[o][1] %>
+                                              </label>
+
+                                              <input type="radio" class="" style="cursor: pointer;" name="A<%= i %>"
+                                                value="<%= question[o][0] %>">
+                                            </div>
+                                      </div>
+                                    </div>
+                                    <% } %>
+                                      <% } %>
+
+
+                          </div>
+
+
+                          <div class="row justify-content-center">
+                            <p>
+                              <%= i+1 %> /<%= questions.length %>
+                            </p>
+                          </div>
+
+
+
+                        </div>
+
+                      </div>
+                      <% } %>
+
+
+
+          </div>
+          <div class="row justify-content-around mt-3 mb-3">
+            <a href="#back" class="btn btn-primary" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+
+
+            <input type="submit" class="btn btn-success pr-5 pl-5" value="end the quiz">
+
+
+            <a href="#back" class="btn btn-primary" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </form>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <%- include('./partials/footer.ejs') %>
+
+
+
+
+        <%- include('./partials/js.ejs') %>
+
+  </body>
+
+</html>

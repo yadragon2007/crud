@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+  </head>
+
+  <body class="bg-dark text-light">
+    <% if (alert==1) { %>
+      <div class="alert alert-warning rounded-0 d-flex align-items-center" role="alert">
+        <form action="/dashboard/" class="" method="post">
+          <input type="hidden" name="userData" value="<%= userData %>">
+          <input type="submit" class="btn btn-warning pl-3 pr-3" value="done">
+        </form>
+      </div>
+      <% } %>
+
+        <%- include('./partials/nav.ejs') %>
+          <div class="container d-flex justify-content-center">
+            <nav aria-label="Page navigation example ">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link bg-dark" href="#users">users</a></li>
+                <li class="page-item"><a class="page-link bg-dark" href="#question">question</a></li>
+                <li class="page-item"><a class="page-link bg-dark" href="#addVideo">add Video</a></li>
+                <li class="page-item"><a class="page-link bg-dark" href="/addQuiz/">add Quiz</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="container d-flex justify-content-center">
+            <nav aria-label="Page navigation example ">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link bg-dark" href="/profile/">profile</a></li>
+                <li class="page-item"><a class="page-link bg-dark" href="/learnning/">learn</a></li>
+                <!-- <li class="page-item"><a class="page-link bg-dark" href="#question">question</a></li>
+                <li class="page-item"><a class="page-link bg-dark" href="#addVideo">add Video</a></li> -->
+              </ul>
+            </nav>
+          </div>
+
+
+
+          <div class="" style="height: 100vh;">
+            <div class="container">
+              <h2 id="users">users</h2>
+            </div>
+            <div class="container mt-5 mb-5" style="max-height: 500px; overflow-y: scroll;">
+
+              <table class="w-100">
+                <thead>
+                  <tr>
+                    <td class="text-center">id</td>
+                    <td class="text-center">name</td>
+                    <td class="text-center">user name</td>
+                    <td class="text-center">academic Year</td>
+                    <td class="text-center">admin/user</td>
+                    <td class="text-center">ban</td>
+                    <td class="text-center">make admin</td>
+                  </tr>
+                </thead>
+                <tbody class="" style="gap: 5px;">
+                  <% for( let i=0; i < AccountsData.length; i++ ) { %>
+                    <tr class="pt-3">
+                      <td class="text-center">
+                        <%= i %>
+                      </td>
+                      <td class="text-center">
+                        <%= AccountsData[i].firstName %>
+                          <%= AccountsData[i].lastName %>
+                      </td>
+                      <td class="text-center">
+                        <%= AccountsData[i].userName %>
+                      </td>
+                      <td class="text-center">
+                        <%= AccountsData[i].academicYear %>
+                      </td>
+                      <td class="text-center">
+                        <% if (AccountsData[i].admin=='0' ) { %>
+                          user
+                          <% }else{ %>
+                            admin
+                            <% } %>
+                      </td>
+
+
+                      <td class="text-center">
+                        <% if (AccountsData[i].admin=='0' ) { %>
+                          <% if (AccountsData[i].ban=='0' ) { %>
+                            <form action="/ban/" method="post">
+                              <input type="hidden" name="id" value="<%= AccountsData[i].id %>">
+                              <input type="hidden" name="AccountsData" value="<%= AccountsData %>">
+                              <input type="hidden" name="userData" value="<%= userData %>">
+                              <input type="submit" class="btn btn-primary pl-3 pr-3 mb-3" value="ban">
+                            </form>
+
+
+                            <% }else{ %>
+                              <form action="/ban/" method="post">
+                                <input type="hidden" name="id" value="<%= AccountsData[i].id %>">
+                                <input type="hidden" name="AccountsData" value="<%= AccountsData %>">
+                                <input type="hidden" name="userData" value="<%= userData %>">
+                                <input type="submit" class="btn btn-danger pl-3 pr-3 mb-3" value="baned">
+                              </form>
+                              <% } %>
+                                <% }else{ %>
+                                  -----
+                                  <% } %>
+
+                      </td>
+                      <% if (AccountsData[i].admin=='0' ) { %>
+                        <td class="text-center">
+                          <form action="/admin/" method="post">
+                            <input type="hidden" name="id" value="<%= AccountsData[i].id %>">
+                            <input type="hidden" name="AccountsData" value="<%= AccountsData %>">
+                            <input type="hidden" name="userData" value="<%= userData %>">
+                            <input type="submit" class="btn btn-primary pl-3 pr-3 mb-3" value="make it admin">
+                          </form>
+                        </td>
+                        <% }else{ %>
+                          <% if (AccountsData[i].userName=='fluentArabic' ) { %>
+                            <td class="text-center">-----</td>
+                            <% }else{ %>
+                              <td class="text-center">
+                                <form action="/admin/" method="post">
+                                  <input type="hidden" name="id" value="<%= AccountsData[i].id %>">
+                                  <input type="hidden" name="AccountsData" value="<%= AccountsData %>">
+                                  <input type="hidden" name="userData" value="<%= userData %>">
+                                  <input type="submit" class="btn btn-primary pl-3 pr-3 mb-3" value="make it user">
+                                </form>
+                              </td>
+                              <% } %>
+                                <% } %>
+                    </tr>
+                    <% } %>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="" style="height: 100vh;">
+            <div class="container">
+              <h2 id="question">question</h2>
+              <form action="/reply/" method="post" class="">
+                <input type="hidden" name="userData" value="<%= userData %>">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <input type="number" class="form-control" name="id" placeholder="id" required>
+                  </div>
+                  <div class="col-6">
+                    <textarea name="reply" cols="50" class="form-control" placeholder="the reply" required></textarea>
+                  </div>
+                  <div class="col-3">
+                    <input type="submit" class="btn btn-primary" value="send">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+            <div class="container mt-5 mb-5" style="max-height: 500px; overflow-y: scroll;">
+
+              <table class="w-100">
+                <thead>
+                  <tr>
+                    <th class="text-center">id</th>
+                    <th class="text-center">name</th>
+                    <th class="text-center">user name</th>
+                    <th class="text-center">academic Year</th>
+                    <th class="text-center">question</th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <% for( let i=0; i < QuSchemaData.length; i++ ) { %>
+                    <% if (QuSchemaData[i].answered !='1' ) { %>
+                      <tr>
+                        <td class="text-center">
+                          <%= i %>
+                        </td>
+                        <td class="text-center">
+                          <%= QuSchemaData[i].AccData.firstName %>
+                            <%= QuSchemaData[i].AccData.lastName %>
+                        </td>
+                        <td class="text-center">
+                          <%= QuSchemaData[i].AccData.userName %>
+                        </td>
+                        <td class="text-center">
+                          <%= QuSchemaData[i].AccData.academicYear %>
+                        </td>
+                        <td class="text-center" style="max-width: 200px;">
+                          <%= QuSchemaData[i].question %>
+                        </td>
+                      </tr>
+                      <% } %>
+
+                        <% } %>
+
+
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="mb-5" style="height: 100vh;">
+            <div class="container">
+              <h1 id="addVideo">add video</h1>
+              <form action="/addVideo/" method="post" class="w-50">
+
+                <div class="form-group">
+                  <label for="Vlink" class="text-secondary ">video link</label>
+                  <input type="text" class="form-control" name="videoLink" id="Vlink" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="Flink" class="text-secondary">file link</label>
+                  <input type="text" class="form-control" name="filesLink" id="Flink">
+                </div>
+
+                <div class=" mt-1">
+                  <select class="custom-select" name="academicYear" aria-label="Default select example">
+                    <option selected value="0">academic year</option>
+                    <option name="fs" value="first secondary">first secondary</option>
+                    <option name="ss" value="Second secondary">Second secondary</option>
+                    <option name="ts" value="Third secondary">Third secondary</option>
+                  </select>
+
+                  <div class="invalid-feedback">chose academic year</div>
+
+                </div>
+
+                <input type="submit" class="btn btn-primary mt-3" value="Add Video">
+
+              </form>
+            </div>
+          </div>
+
+
+
+
+          
+
+
+
+
+
+          <%- include('./partials/footer.ejs') %>
+
+
+
+            <%- include('./partials/js.ejs') %>
+
+  </body>
+
+</html>

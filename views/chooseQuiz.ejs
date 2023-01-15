@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+
+  </head>
+
+  <body class="bg-dark text-light text-capitalize">
+
+    <%- include('./partials/nav.ejs') %>
+
+
+
+
+      <%- include('./partials/carousel.ejs') %>
+
+
+
+
+
+
+
+        <div class="container mb-5 mt-5">
+          <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+              <h1>choose exam</h1>
+            </div>
+
+            <div class="col-12 col-lg-10">
+              <div class="row justify-content-center">
+
+
+                <% for( let i=QuizData.length-1; i>= 0; i-- ) { %>
+                  <% if (QuizData[i].online=='1' ) { %>
+                    <% if (QuizData[i].academicYear==userData.academicYear) { %>
+                      <div class="card bg-dark w-100 m-4">
+                        <div class="card-body">
+                          <div class="row justify-content-md-between justify-content-center align-items-center"
+                            style="gap: 10px;">
+                            <div class="col-md-7 col-12 d-flex justify-content-center">
+                              <h3>
+                                <%= QuizData[i].title%>
+                              </h3>
+                            </div>
+                            <div class="col-md-3 col-12 d-flex justify-content-center">
+                              <a href="/quiz/start/<%= QuizData[i].id %>/" class="btn btn-primary">start</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <% } %>
+
+                        <% } %>
+
+                          <% } %>
+
+
+
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <%- include('./partials/footer.ejs') %>
+
+
+
+
+
+          <%- include('./partials/js.ejs') %>
+
+  </body>
+
+</html>

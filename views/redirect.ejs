@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head.ejs') %> 
+
+</head>
+
+<body class="bg-dark text-light text-capitalize">
+  
+  <%- include('./partials/nav.ejs') %> 
+
+
+
+  <div class="">
+    <div class="row justify-content-center">
+      <h3>done</h3>
+    </div>
+    <form action="/redirect" method="post">
+      <input type="hidden" name="userData" value="<%= userData._id %>">
+      <div class="row justify-content-center mt-2">
+        <input type="submit" value="back to login" class="btn btn-primary">
+      </div>
+    </form>
+    
+  </div>
+
+
+
+
+
+
+  <%- include('./partials/js.ejs') %> 
+</body>
+
+</html>

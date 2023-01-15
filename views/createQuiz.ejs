@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+  </head>
+
+  <body class="bg-dark text-light text-capitalize">
+    <% if (alert==1) { %>
+      <div class="alert alert-warning rounded-0 d-flex justify-content-between" id="alert">
+        <div class="m-2 text-dark">
+          <%= alertValue %>
+        </div>
+      </div>
+      <% } %>
+        <%- include('./partials/nav.ejs') %>
+
+
+
+
+          <div class="mb-3">
+            <div class="container">
+
+              <h2 id="addQuiz">quiz</h2>
+            </div>
+            <div class="container mt-5 mb-5" style="max-height: 500px;">
+              <% if (QuizData.online=='0' ) { %>
+                <h3>
+                  <span class="badge bg-danger ">offline</span>
+                  <%= QuizData.title %>
+                </h3>
+                <% }else{ %>
+                  <h3>
+                    <span class="badge bg-success">online</span>
+                    <%= QuizData.title %>
+                  </h3>
+                  <% } %>
+
+
+                    <form action="/addQuiz/" method="post">
+                      <div class="row justify-content-between">
+                        <% if (QuizData=='' ) { %>
+                          <input type="text" class="col-12" name="title" placeholder="title" required>
+                          <% }else{ %>
+                            <textarea name="text" style="width: 100%; outline: none;" placeholder="text"></textarea>
+                            <input type="text" class="col-12" name="question" placeholder="question">
+                            <input type="text" class="col-6" name="answer" placeholder="answer">
+                            <input type="text" class="col-6" name="false1" placeholder="false1">
+                            <input type="text" class="col-6" name="false2" placeholder="false2">
+                            <input type="text" class="col-6" name="false3" placeholder="false3">
+                            <% } %>
+
+                      </div>
+
+
+                      <div class="row justify-content-between">
+                        <% if (QuizData=='' ) { %>
+                          <div class="col-5 mt-1 mb-3">
+                            <select class="custom-select" name="academicYear" aria-label="Default select example">
+                              <option selected value="0">academic year</option>
+                              <option name="fs" value="first secondary">first secondary</option>
+                              <option name="ss" value="Second secondary">Second secondary</option>
+                              <option name="ts" value="Third secondary">Third secondary</option>
+                            </select>
+                          </div>
+                          <% } %>
+
+                            <div class="col-5 mt-1 mb-3">
+                              <select class="custom-select " name="system" aria-label="Default select example">
+                                <option value="0" selected>system</option>
+                                <option value="createQuiz">create Quiz</option>
+                                <option value="openQuiz">open Quiz</option>
+                                <option value="addQuestion">add Question</option>
+                                <% if (QuizData.online=='0' ) { %>
+                                  <option value="online">online</option>
+                                  <% }else{ %>
+                                    <option value="offline">offline</option>
+
+                                    <% } %>
+                                      <option value="cansel">cansel</option>
+                                      <option value="delete">delete</option>
+                              </select>
+                            </div>
+
+                      </div>
+                      <input type="submit" class="btn btn-primary" value="add/create">
+                    </form>
+            </div>
+
+
+
+        
+
+
+            <div class="w-100 d-flex flex-column align-items-center" style="gap: 10px;">
+              <% if (QuizData!='' ) { %>
+                <% for( let i=0; i < QuizData.questions.length; i++ ) { %>
+                  <div class="card w-75 bg-dark text-light questionDashBoard">
+                  
+                    <div class="question">
+                      <div class="">
+                        <%= i+1 %>)
+                      </div>
+                      <p>
+                        <%= QuizData.questions[i].question %>
+                      </p>
+                    </div>
+                    <div class="answer row m-2">
+                      <div class="col-6 text-success">
+                        <div class="">a)</div>
+                        <p>
+                          <%= QuizData.questions[i].answer %>
+                        </p>
+                      </div>
+
+                      <div class="col-6">
+                        <div class="">b)</div>
+                        <p>
+                          <%= QuizData.questions[i].false1 %>
+                        </p>
+                      </div>
+                      <div class="col-6">
+                        <div class="">c)</div>
+                        <p>
+                          <%= QuizData.questions[i].false2 %>
+                        </p>
+                      </div>
+
+                      <div class="col-6">
+                        <div class="">D)</div>
+                        <p>
+                          <%= QuizData.questions[i].false3 %>
+                        </p>
+                      </div>
+                    </div>
+                    <a class="bg-danger btn btn-danger m-3" style="width: 100px;" href="/delete/question/<%= QuizData._id %>/<%= i %>/">delete</a>
+
+                  </div>
+                  <% } %>
+
+            </div>
+            <% } %>
+
+
+          </div>
+
+
+
+
+
+
+          <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/js.ejs') %>
+
+  </body>
+
+</html>
